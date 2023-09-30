@@ -1,0 +1,26 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block content %}
+  <body>
+  <main class="page projects-page">
+    <section class="portfolio-block projects-with-sidebar">
+      <div class="container">
+        <div class="heading">
+          <h2>{{ project.name }}</h2>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="row">
+              {% for picture in project.picture_set.all %}
+                <div class="col-md-6 col-lg-4 project-sidebar-card"><a href="#"><img
+                    class="img-fluid image scale-on-hover" src="{{ picture.image.url }}"></a></div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  </body>
+{% endblock %}

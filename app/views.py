@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views import generic
 
 from app.models import Style, Project
 
@@ -18,6 +19,11 @@ def projects_list_view(request):
     }
     return render(
         request,
-        "projects-list.html",
+        "projects_list.html",
         context=context
     )
+
+
+class ProjectDetailView(generic.DetailView):
+    model = Project
+    template_name = "project_detail.html"
