@@ -14,7 +14,7 @@
             <ul class="list-unstyled sidebar">
               <li><a class="active" href="#">All</a></li>
               {% for style in styles %}
-                <li><a href="#">{{ style.name }}</a></li>
+                <li><a href="{% url "app:projects_list" %}">{{ style.name }}</a></li>
               {% endfor %}
             </ul>
           </div>
