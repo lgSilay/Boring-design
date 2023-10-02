@@ -23,7 +23,7 @@ from django.urls import path, include
 from app.views import index
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path("admin/", admin.site.urls),
     path("", include("app.urls", namespace="app")),
     path("accounts/", include("django.contrib.auth.urls")),
 ]
