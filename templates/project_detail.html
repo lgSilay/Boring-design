@@ -1,0 +1,52 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block content %}
+  <body>
+  <main class="page projects-page">
+    <section class="portfolio-block projects-with-sidebar">
+      <div class="container">
+        <div class="heading">
+          <h2>{{ project.name }}</h2>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="row">
+              {% for picture in project.picture_set.all %}
+                <div class="col-md-6 col-lg-4 project-sidebar-card"><a href="#"><img
+                    class="img-fluid image scale-on-hover" src="{{ picture.image.url }}"></a></div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        <div class="mt-2">
+          <p class="lh-sm">
+            {{ post.content }}
+          </p>
+        </div>
+        <span> <strong> {{ project.comments.count }} comment{{ project.comments.count|pluralize }}</strong> </span>
+        {% if project.comments.count %}
+          {% for comment in project.comments.all %}
+            <ul class="list-group mt-2">
+              <li class="list-group-item">
+                <p style="font-weight: bold">{{ comment.user.first_name }} {{ comment.user.last_name }}</p>
+                <p> {{ comment.content }}</p>
+                <span class="text-muted"> {{ comment.created_time }}</span>
+              </li>
+            </ul>
+          {% endfor %}
+        {% else %}
+          <p>No comments</p>
+        {% endif %}
+        <h3 class="mt-5 row">Add a comment</h3>
+        <div class="list-group-item">
+          <form action="" method="post" novalidate>
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Comment" class="btn btn-primary">
+          </form>
+        </div>
+    </section>
+  </main>
+  </body>
+{% endblock %}
