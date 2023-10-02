@@ -19,6 +19,32 @@
             </div>
           </div>
         </div>
+        <div class="mt-2">
+          <p class="lh-sm">
+            {{ post.content }}
+          </p>
+        </div>
+        <span> <strong> {{ project.comments.count }} comment{{ project.comments.count|pluralize }}</strong> </span>
+        {% if project.comments.count %}
+          {% for comment in project.comments.all %}
+            <ul class="list-group mt-2">
+              <li class="list-group-item">
+                <p style="font-weight: bold">{{ comment.user.first_name }} {{ comment.user.last_name }}</p>
+                <p> {{ comment.content }}</p>
+                <span class="text-muted"> {{ comment.created_time }}</span>
+              </li>
+            </ul>
+          {% endfor %}
+        {% else %}
+          <p>No comments</p>
+        {% endif %}
+        <h3 class="mt-5 row">Add a comment</h3>
+      <div class="list-group-item">
+        <form action="" method="post" novalidate>
+          {% csrf_token %}
+          {{ form }}
+          <input type="submit" value="Comment" class="btn btn-primary">
+        </form>
       </div>
     </section>
   </main>
