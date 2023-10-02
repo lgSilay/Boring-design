@@ -15,6 +15,7 @@ Boring Interiors is a web application built with Django that allows users to bro
 - **Filter projects by proper style**: Choose one of the corresponding design styles and focus on it.
 - **Comments section**: Feel free to leave a comment in the corresponding section below.
 - **Admin Panel**: A custom admin panel for managing design styles, all projects, users and create/update project's.
+- **Adaptive layout**: The website features adaptive design for various screen widths on different devices. 
 
 
 ## Demo
