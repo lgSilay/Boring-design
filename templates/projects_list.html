@@ -1,0 +1,35 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block content %}
+  <body>
+  <main class="page projects-page">
+    <section class="portfolio-block projects-with-sidebar">
+      <div class="container">
+        <div class="heading">
+          <h2>My projects</h2>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <ul class="list-unstyled sidebar">
+              <li><a class="active" href="{% url 'app:projects_list' %}">All</a></li>
+              {% for style in styles %}
+                <li><a href="{% url "app:projects_filtered_list" style.id %}">{{ style.name }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="col-md-9">
+            <div class="row">
+              {% for project in projects %}
+                <div class="col-md-6 col-lg-4 project-sidebar-card"><a
+                    href="{% url "app:projects_detail" project.id %}"><img
+                    class="img-fluid image scale-on-hover" src="{{ project.proj_img.url }}"></a></div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  </body>
+{% endblock %}
