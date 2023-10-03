@@ -23,7 +23,7 @@
               {% for project in projects %}
                 <div class="col-md-6 col-lg-4 project-sidebar-card"><a
                     href="{% url "app:projects_detail" project.id %}"><img
-                    class="img-fluid image scale-on-hover" src="{{ project.proj_img.url }}"></a></div>
+                    class="img-fluid image scale-on-hover" src="{{ project.proj_img.url }}" alt="..."></a></div>
               {% endfor %}
             </div>
           </div>
