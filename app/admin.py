@@ -1,5 +1,5 @@
 from django.contrib import admin
-from django.contrib.auth.models import Group
+from django.contrib.auth.admin import UserAdmin
 
 from app.models import (
     Style,
@@ -9,10 +9,9 @@ from app.models import (
     Commentary
 )
 
-# admin.site.unregister(Group)
+
 admin.site.register(Project)
 admin.site.register(Picture)
-admin.site.register(User)
+admin.site.register(User, UserAdmin)
 admin.site.register(Commentary)
 admin.site.register(Style)
-

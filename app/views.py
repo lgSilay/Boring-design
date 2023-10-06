@@ -1,7 +1,6 @@
 from django.http import HttpRequest, HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
-from django.views import generic
 
 from app.forms import CommentForm
 from app.models import Style, Project, Commentary

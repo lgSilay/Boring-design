@@ -12,9 +12,9 @@
         <div class="row">
           <div class="col-md-12">
             <div class="row">
-              {% for picture in project.picture_set.all %}
-                <div class="col-md-6 col-lg-4 project-sidebar-card"><a href="#"><img
-                    class="img-fluid image scale-on-hover" src="{{ picture.image.url }}"></a></div>
+              {% for picture in project.pictures.all %}
+                <div class="col-md-6 col-lg-4 project-sidebar-card"><img
+                    class="img-fluid image scale-on-hover" src="{{ picture.image.url }}"></div>
               {% endfor %}
             </div>
           </div>
@@ -38,10 +38,11 @@
         {% else %}
           <p>No comments</p>
         {% endif %}
-        <h3 class="mt-5 row">Add a comment</h3>
-        <div class="list-group-item">
+{#        <h3 class="mt-5 row">Add a comment</h3>#}
+        <div class="list-group-item ">
           <form action="" method="post" novalidate>
             {% csrf_token %}
+            <h3 class="mt-5 row">Add a comment</h3>
             {{ form }}
             <input type="submit" value="Comment" class="btn btn-primary">
           </form>

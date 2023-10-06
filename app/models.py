@@ -14,7 +14,7 @@ class Style(models.Model):
 class Project(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
-    style = models.ManyToManyField(Style, related_name="styles")
+    style = models.ManyToManyField(Style, related_name="projects")
     proj_img = models.ImageField(upload_to=f"img/title/", default=None)
 
     def __str__(self) -> str:
@@ -23,7 +23,7 @@ class Project(models.Model):
 
 class Picture(models.Model):
     name = models.CharField(max_length=63)
-    project = models.ForeignKey(Project, on_delete=models.CASCADE)
+    project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name="pictures")
     image = models.ImageField(upload_to=f"img/content/")
 
     def __str__(self):

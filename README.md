@@ -1,4 +1,4 @@
-![logo.png](logo.png)
+![logo.png](static/logo/logo.png)
 # Boring-interiors - Django Website for interiors design studio
 
 Boring Interiors is a web application built with Django that allows users to browse interior projects, get inspired by them, contact interior studios, or leave comments on any project.
@@ -18,9 +18,29 @@ Boring Interiors is a web application built with Django that allows users to bro
 - **Adaptive layout**: The website features adaptive design for various screen widths on different devices. 
 
 
-## Demo
+## Title
 
-![title.PNG](title.png)
+![title.PNG](static/logo/title.png)
+
+## Project list
+
+![projects_list.PNG](..%2F..%2FDesktop%2Fprojects_list.PNG)
+
+## Filter by style design
+
+![Filter_1.PNG](..%2F..%2FDesktop%2FFilter_1.PNG)
+
+## Project detail view
+
+![project_detail.PNG](..%2F..%2FDesktop%2Fproject_detail.PNG)
+
+## Comments section for every project
+
+![comments.PNG](..%2F..%2FDesktop%2Fcomments.PNG)
+
+## Login page
+
+![login.PNG](..%2F..%2FDesktop%2Flogin.PNG)
 
 ## Getting Started
 
@@ -46,9 +66,9 @@ python manage.py runserver
 ```
 
 ### DB relations
-![img.png](img.png)
+![img.png](static/logo/img.png)
 
 ### User credentials for login
 
-- User: TestUser
+- User: User
 - Password: TestUser123
