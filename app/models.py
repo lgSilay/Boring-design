@@ -15,7 +15,12 @@ class Project(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
     style = models.ManyToManyField(Style, related_name="projects")
-    proj_img = models.ImageField(upload_to=f"img/title/", default=None)
+    proj_img = models.ImageField(
+        upload_to=f"img/title/",
+        default=None,
+        null=True,
+        blank=True
+    )
 
     def __str__(self) -> str:
         return self.name
@@ -24,7 +29,11 @@ class Project(models.Model):
 class Picture(models.Model):
     name = models.CharField(max_length=63)
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name="pictures")
-    image = models.ImageField(upload_to=f"img/content/")
+    image = models.ImageField(
+        upload_to=f"img/content/",
+        null=True,
+        blank=True
+    )
 
     def __str__(self):
         return self.name

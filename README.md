@@ -24,23 +24,23 @@ Boring Interiors is a web application built with Django that allows users to bro
 
 ## Project list
 
-![projects_list.PNG](..%2F..%2FDesktop%2Fprojects_list.PNG)
+![projects_list.PNG](static/logo/projects_list.PNG)
 
 ## Filter by style design
 
-![Filter_1.PNG](..%2F..%2FDesktop%2FFilter_1.PNG)
+![Filter_1.PNG](static/logo/Filter_1.PNG)
 
 ## Project detail view
 
-![project_detail.PNG](..%2F..%2FDesktop%2Fproject_detail.PNG)
+![project_detail.PNG](static/logo/project_detail.PNG)
 
 ## Comments section for every project
 
-![comments.PNG](..%2F..%2FDesktop%2Fcomments.PNG)
+![comments.PNG](static/logo/comments.PNG)
 
 ## Login page
 
-![login.PNG](..%2F..%2FDesktop%2Flogin.PNG)
+![login.PNG](static/logo/login.PNG)
 
 ## Getting Started
 
